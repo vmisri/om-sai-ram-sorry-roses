@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#260e1a">
+  <meta name="description" content="A little garden of roses, and an honest apology.">
+  <title>Mujhe maaf karna, Om Sai Ram</title>
+  <style>
+    :root{--night:#260e1a;--wine:#511b31;--rose:#d85176;--pink:#f7cfda;--cream:#fff7ed;--gold:#e9c88d;--leaf:#315848}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 50% -20%,#7b2b49 0,transparent 42%),radial-gradient(circle at 10% 80%,#4e2034 0,transparent 36%),var(--night);color:var(--cream);font-family:Georgia,'Times New Roman',serif}
+    .grain{position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+    main{position:relative;isolation:isolate;max-width:1180px;margin:auto;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:38px 24px 62px}
+    .scene{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,1.05fr);align-items:center;gap:clamp(22px,5vw,80px)}
+    .decor{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+    .petal{position:absolute;display:block;width:13px;height:23px;border-radius:90% 8% 80% 8%;background:linear-gradient(135deg,#f6a8bb,#b3335b);opacity:.55;animation:drift var(--d,13s) linear infinite;left:var(--x);top:-5%;transform:rotate(var(--r,0deg));filter:blur(.2px)}
+    @keyframes drift{to{top:108%;transform:translateX(var(--dx,60px)) rotate(570deg);opacity:0}}
+    .intro{z-index:2;text-align:left;padding:26px 0}
+    .eyebrow{font:700 .72rem/1.4 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}
+    .eyebrow:before{content:'';display:block;width:38px;height:1px;background:var(--gold)}
+    h1{font-weight:400;font-size:clamp(3.1rem,6vw,5.7rem);line-height:1;letter-spacing:-.055em;margin:24px 0 22px;text-wrap:balance}
+    h1 em{font-weight:400;color:#f3a9bd}
+    .verse{max-width:510px;color:#f8d8c8;font-size:clamp(1.18rem,2.2vw,1.55rem);line-height:1.5;font-style:italic;margin:0 0 24px;padding-left:22px;border-left:2px solid var(--gold)}
+    .verse span{display:block;margin-bottom:9px}
+    .lead{max-width:470px;color:#f3dce2;font-size:clamp(1.08rem,2vw,1.27rem);line-height:1.68;margin:0 0 28px}
+    .signature-line{color:var(--gold);font-size:1.04rem;font-style:italic}
+    .flower-side{position:relative;min-height:600px;display:grid;place-items:center}
+    .bouquet{width:min(100%,490px);height:auto;overflow:visible;filter:drop-shadow(0 24px 35px #10050b8a);animation:arrive 1.2s ease both}
+    @keyframes arrive{from{opacity:0;transform:translateY(26px) scale(.94)}to{opacity:1;transform:none}}
+    .bouquet .sway{transform-origin:50% 92%;animation:sway 6s ease-in-out infinite alternate}
+    @keyframes sway{to{transform:rotate(2.3deg)}}
+    .open-button,.again{appearance:none;cursor:pointer;border:1px solid #f7dce3b3;border-radius:100px;background:linear-gradient(135deg,#edb7c6,#f9d7d7);color:#4a1830;font:700 .88rem/1.2 Arial,sans-serif;letter-spacing:.04em;padding:16px 26px;box-shadow:0 14px 28px #18071170, inset 0 1px #fff8;transition:transform .22s,box-shadow .22s}
+    .open-button:hover,.again:hover{transform:translateY(-3px);box-shadow:0 19px 32px #18071190}
+    .open-button:focus-visible,.again:focus-visible,.close:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .open-button span{margin-left:10px}
+    .hint{display:block;margin-top:13px;color:#ddb6c5;font:400 .78rem/1.4 Arial,sans-serif;letter-spacing:.06em}
+    .mini-rose{position:absolute;width:34px;height:34px;fill:#e6a7b7;opacity:.9}
+    .r1{left:2%;top:13%;transform:rotate(-24deg)}.r2{right:0;top:4%;width:26px}.r3{left:14%;bottom:8%;width:23px;transform:rotate(22deg)}
+    dialog{border:0;padding:0;background:transparent;color:var(--night);max-width:min(92vw,680px);max-height:90vh;overflow:visible}
+    dialog::backdrop{background:#12050cc9;backdrop-filter:blur(7px)}
+    .letter{position:relative;background:#fffaf3;border:1px solid #f2d8c4;border-radius:6px;padding:clamp(36px,7vw,74px);box-shadow:0 28px 90px #0802079c,0 0 0 8px #fff7ef20;max-height:90vh;overflow:auto;animation:unfold .65s cubic-bezier(.18,.8,.28,1) both}
+    @keyframes unfold{from{opacity:0;transform:translateY(32px) rotate(-2deg) scale(.92)}to{opacity:1;transform:none}}
+    .letter:before,.letter:after{content:'✿';position:absolute;font-size:3.3rem;color:#d36785;opacity:.25}.letter:before{top:9px;left:21px}.letter:after{right:18px;bottom:10px;transform:rotate(30deg)}
+    .close{position:absolute;top:17px;right:18px;appearance:none;border:0;background:transparent;color:#74334c;cursor:pointer;font:400 1.9rem/1 Arial,sans-serif;width:38px;height:38px;border-radius:50%}
+    .close:hover{background:#f6e7e9}
+    .letter-kicker{color:#a94a66;font:700 .68rem/1.2 Arial,sans-serif;letter-spacing:.27em;text-transform:uppercase}
+    .letter h2{font-size:clamp(2.7rem,7vw,4.5rem);font-weight:400;line-height:1;margin:18px 0 26px;letter-spacing:-.045em;color:#64243c}
+    .letter p{font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.77;margin:0 0 17px;color:#513a3b}
+    .letter .promise{color:#8b3654;font-style:italic}
+    .letter .signoff{margin:27px 0 0;color:#8e4760;font-style:italic}
+    .rose-divider{display:flex;align-items:center;gap:11px;color:#c26481;margin:26px 0}.rose-divider:before,.rose-divider:after{content:'';height:1px;background:#e9c7ce;flex:1}
+    .bottom-note{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:#d6aabb;font:400 .72rem/1.4 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+    @media(max-width:760px){main{align-items:flex-start;padding:46px 22px 74px}.scene{display:flex;flex-direction:column;gap:0}.intro{text-align:center;padding:0;order:2;margin-top:-45px}.eyebrow{justify-content:center}.flower-side{order:1;min-height:0;width:100%}.bouquet{width:min(88vw,350px)}h1{font-size:clamp(3rem,12vw,5rem);margin:8px 0 14px}.verse{padding:0;border:0;font-size:1.16rem}.lead{font-size:1.06rem}.bottom-note{bottom:15px}.r1{top:10%}.r3{bottom:0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main>
+    <div class="decor" aria-hidden="true">
+      <i class="petal" style="--x:5%;--d:15s;--dx:80px"></i><i class="petal" style="--x:17%;--d:11s;--dx:-50px;animation-delay:-4s"></i><i class="petal" style="--x:32%;--d:17s;--dx:90px;animation-delay:-10s"></i><i class="petal" style="--x:49%;--d:13s;--dx:-95px;animation-delay:-7s"></i><i class="petal" style="--x:68%;--d:16s;--dx:55px;animation-delay:-12s"></i><i class="petal" style="--x:87%;--d:12s;--dx:-60px;animation-delay:-2s"></i><i class="petal" style="--x:95%;--d:19s;--dx:-110px;animation-delay:-15s"></i>
+    </div>
+    <div class="scene">
+      <div class="intro">
+        <div class="eyebrow">Roses and a note from my heart</div>
+        <h1>Mujhe maaf karna,<br><em>Om Sai Ram.</em></h1>
+        <p class="verse"><span>Subah gym aane se pehle loonga tera naam, Om Sai Ram.</span><span>Gym aake sabke saamne tujhe karunga good morning wish, Om Sai Ram.</span></p>
+        <p class="lead">Yesterday I went quiet when I should have spoken to you. These roses come with an honest apology.</p>
+        <button class="open-button" id="open" type="button">Open my note <span aria-hidden="true">✉</span></button>
+        <span class="hint">A letter, just for you</span>
+        <p class="signature-line">With care, and a lot of roses ♡</p>
+      </div>
+      <div class="flower-side" aria-hidden="true">
+        <svg class="mini-rose r1" viewBox="0 0 50 50"><use href="#rose-head"/></svg>
+        <svg class="mini-rose r2" viewBox="0 0 50 50"><use href="#rose-head"/></svg>
+        <svg class="mini-rose r3" viewBox="0 0 50 50"><use href="#rose-head"/></svg>
+        <svg class="bouquet" viewBox="0 0 520 610" role="presentation" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wrap" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efd7bd"/><stop offset="1" stop-color="#b88177"/></linearGradient>
+            <radialGradient id="bloom"><stop stop-color="#f8b5c7"/><stop offset=".67" stop-color="#d45b79"/><stop offset="1" stop-color="#9e2e53"/></radialGradient>
+            <symbol id="rose-head" viewBox="0 0 50 50"><circle cx="25" cy="25" r="23" fill="url(#bloom)"/><path d="M7 27C14 17 19 25 23 16c4-8 11-7 15-1M7 29c7 11 18 3 20 12 3-8 14-5 16-14M17 8c0 7 7 6 10 13 2-6 8-11 15-9" fill="none" stroke="#f6b6c5" stroke-width="2.3" opacity=".65"/><path d="M15 25c6 3 7-9 17-6 6 2 6 9 1 13-5 5-17 3-17-3 0-4 6-6 10-3 3 2 1 5-2 5" fill="none" stroke="#842344" stroke-width="3.2" stroke-linecap="round"/></symbol>
+            <symbol id="leaf" viewBox="0 0 64 35"><path d="M1 33C10 5 36-4 63 4 60 26 34 42 1 33Z" fill="#416b54" stroke="#9bb684" stroke-width="1.5"/><path d="M3 32C23 21 41 12 62 4" fill="none" stroke="#b7c8a3" stroke-width="1.6"/></symbol>
+            <symbol id="small-flower" viewBox="0 0 50 50"><g fill="#f7e4db"><ellipse cx="25" cy="9" rx="8" ry="12"/><ellipse cx="40" cy="22" rx="8" ry="12" transform="rotate(72 40 22)"/><ellipse cx="34" cy="40" rx="8" ry="12" transform="rotate(144 34 40)"/><ellipse cx="16" cy="40" rx="8" ry="12" transform="rotate(216 16 40)"/><ellipse cx="10" cy="22" rx="8" ry="12" transform="rotate(288 10 22)"/></g><circle cx="25" cy="25" r="7" fill="#e8bd74"/></symbol>
+          </defs>
+          <g class="sway">
+            <g fill="none" stroke="#52775a" stroke-width="7" stroke-linecap="round"><path d="M255 506Q165 345 121 147"/><path d="M257 505Q319 343 370 133"/><path d="M255 503Q260 299 260 78"/><path d="M252 505Q207 323 180 205"/><path d="M254 503Q301 315 323 200"/><path d="M258 501Q152 363 86 265"/><path d="M259 499Q374 363 431 261"/></g>
+            <g opacity=".95"><use href="#leaf" x="92" y="274" width="90" height="49" transform="rotate(-30 130 296)"/><use href="#leaf" x="170" y="319" width="82" height="45" transform="rotate(172 211 341)"/><use href="#leaf" x="263" y="311" width="88" height="48" transform="rotate(15 307 335)"/><use href="#leaf" x="323" y="268" width="86" height="47" transform="rotate(177 366 291)"/><use href="#leaf" x="105" y="380" width="82" height="45" transform="rotate(-5 146 402)"/><use href="#leaf" x="324" y="379" width="83" height="45" transform="rotate(188 365 401)"/></g>
+            <g opacity=".95"><use href="#small-flower" x="70" y="187" width="48" height="48"/><use href="#small-flower" x="405" y="181" width="45" height="45"/><use href="#small-flower" x="148" y="84" width="39" height="39"/><use href="#small-flower" x="339" y="89" width="42" height="42"/><use href="#small-flower" x="86" y="326" width="40" height="40"/><use href="#small-flower" x="392" y="331" width="38" height="38"/></g>
+            <g><use href="#rose-head" x="77" y="101" width="102" height="102"/><use href="#rose-head" x="202" y="39" width="118" height="118"/><use href="#rose-head" x="329" y="107" width="107" height="107"/><use href="#rose-head" x="136" y="191" width="106" height="106"/><use href="#rose-head" x="272" y="181" width="110" height="110"/><use href="#rose-head" x="33" y="245" width="93" height="93"/><use href="#rose-head" x="390" y="239" width="91" height="91"/><use href="#rose-head" x="208" y="141" width="106" height="106"/></g>
+            <path d="M122 369Q260 454 398 369L326 563Q256 596 190 563Z" fill="url(#wrap)" stroke="#efddc6" stroke-width="4"/><path d="M122 369Q260 448 398 369" fill="none" stroke="#fff3dc" stroke-width="7"/><path d="M176 476Q255 504 343 474" fill="none" stroke="#f8e5d0" stroke-width="3" opacity=".65"/><path d="M213 492Q255 524 297 492l-10 54q-31 20-64 0Z" fill="#8c3856"/><path d="M255 491v75" stroke="#5d203c" stroke-width="6"/><path d="M248 500Q203 469 178 484q0 34 67 40M263 500q42-38 75-14-9 35-72 38" fill="#a24765" stroke="#e0a4af" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="bottom-note">Every rose here says: I am sorry</div>
+  </main>
+  <dialog id="note" aria-labelledby="letter-title">
+    <div class="letter">
+      <button class="close" id="close" type="button" aria-label="Close letter">×</button>
+      <div class="letter-kicker">A note from my heart</div>
+      <h2 id="letter-title">Mujhe maaf karna.</h2>
+      <p>Yesterday, I was not ignoring you. My mind was not in a good place, but I should have told you instead of going quiet.</p>
+      <p>I am sorry if my silence made you feel hurt or unimportant. You did not deserve that. You matter to me, and I want you to feel that in the way I treat you, not only in the words I say.</p>
+      <p class="promise">I promise I will communicate when I am struggling, and I will not let this happen again.</p>
+      <div class="rose-divider" aria-hidden="true">✿ &nbsp; 🌹 &nbsp; ✿</div>
+      <p>I hope you can accept these roses as a small beginning. I would really like the chance to make things right.</p>
+      <p class="signoff">With all my heart,<br>me ♡</p>
+    </div>
+  </dialog>
+  <script>
+    const note = document.getElementById('note');
+    document.getElementById('open').addEventListener('click',()=>note.showModal());
+    document.getElementById('close').addEventListener('click',()=>note.close());
+    note.addEventListener('click',event=>{if(event.target===note)note.close()});
+  </script>
+</body>
+</html>
